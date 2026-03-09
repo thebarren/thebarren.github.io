@@ -572,54 +572,34 @@
 
 <section class="section fade-in d5">
   <div class="newsletter">
-
+    
     <div>
       <h3>Stay in the loop.</h3>
       <p>New post? You'll be the first to know. No spam, ever.</p>
     </div>
 
-    <form 
-      class="nl-form"
-      id="subscribe-form"
-      action="https://thebarren.substack.com/api/v1/free"
-      method="post"
-      target="hidden_iframe"
-    >
-
-      <input
-        type="email"
-        name="email"
-        placeholder="your@email.com"
-        required
-      >
-
-      <input type="hidden" name="source" value="website">
-
-      <button class="subscribe-btn" id="subscribe-btn" type="submit">
-        <span class="btn-text">Subscribe ✦</span>
-      </button>
-
-    </form>
-
-    <!-- invisible iframe -->
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <!-- Substack form appears here -->
+    <div id="custom-substack-embed"></div>
 
   </div>
 </section>
 
 <script>
-const form = document.getElementById("subscribe-form");
-const btn = document.getElementById("subscribe-btn");
-const text = document.querySelector(".btn-text");
-
-form.addEventListener("submit", function() {
-
-  btn.classList.add("success");
-  text.innerHTML = "✓ You're in!";
-
-});
+window.CustomSubstackWidget = {
+  substackUrl: "thebarren.substack.com",
+  placeholder: "your@email.com",
+  buttonText: "Subscribe ✦",
+  theme: "custom",
+  colors: {
+    primary: "#111",
+    input: "#ffffff",
+    email: "#000000",
+    text: "#ffffff"
+  }
+};
 </script>
 
+<script src="https://substackapi.com/widget.js" async></script>
 
 
 <footer>
@@ -633,6 +613,7 @@ form.addEventListener("submit", function() {
 
 </body>
 </html>
+
 
 
 
