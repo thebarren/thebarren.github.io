@@ -592,37 +592,38 @@
       </button>
     
     </form>
-
-    <script>
-    const form = document.getElementById("subscribe-form");
-    const btn = document.getElementById("subscribe-btn");
-    const text = document.querySelector(".btn-text");
-    
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-    
-      const email = form.email.value;
-    
-      await fetch("https://thebarren.substack.com/api/v1/free", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams({
-          email: email,
-          source: "website"
-        })
-      });
-   
-      btn.classList.add("success");
-      text.innerHTML = "✓ You're in!";
-    
-      form.reset();
-    });
-    </script>
-
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("subscribe-form");
+  const btn = document.getElementById("subscribe-btn");
+  const text = document.querySelector(".btn-text");
+  
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+  
+    const email = form.email.value;
+  
+    await fetch("https://thebarren.substack.com/api/v1/free", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: new URLSearchParams({
+        email: email,
+        source: "website"
+      })
+    });
+ 
+    btn.classList.add("success");
+    text.innerHTML = "✓ You're in!";
+  
+    form.reset();
+  });
+</script>
+
+
 
 <footer>
   <p>© 2026 TheBarren · <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color:var(--muted);text-decoration:none;">CC BY-NC 4.0</a></p>
@@ -635,6 +636,7 @@
 
 </body>
 </html>
+
 
 
 
