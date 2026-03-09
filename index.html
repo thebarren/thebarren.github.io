@@ -244,20 +244,29 @@
       to   { transform: rotate(360deg); }
     }
 
-    .subscribe-btn {
-      background: #111;
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    .subscribe-btn{
+      background:#111;
+      color:white;
+      border:none;
+      padding:12px 26px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:15px;
+    
+      transition:all .35s ease;
     }
     
-    .subscribe-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    .subscribe-btn.success{
+      background:#22c55e;
+      transform:scale(1.05);
+    }
+    
+    .subscribe-btn.success .btn-text{
+      content:"";
+    }
+    
+    .subscribe-btn:hover{
+      transform:scale(1.05);
     }
 
     .card-grid {
@@ -570,27 +579,38 @@
     </div>
 
     <form class="nl-form" id="subscribe-form">
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <button class="subscribe-btn">Subscribe ✦</button>
-    </form>
     
-    <p id="msg"></p>
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="your@email.com"
+        required
+      >
+    
+      <button class="subscribe-btn" id="subscribe-btn">
+        <span class="btn-text">Subscribe ✦</span>
+      </button>
+    
+    </form>
     
     <script>
     const form = document.getElementById("subscribe-form");
-    const msg = document.getElementById("msg");
+    const btn = document.getElementById("subscribe-btn");
+    const text = document.querySelector(".btn-text");
     
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
     
       const email = form.email.value;
     
-      await fetch("https://substack.com/@thebarren/api/v1/free", {
+      await fetch("https://YOURSUBSTACK.substack.com/api/v1/free", {
         method: "POST",
         body: new URLSearchParams({ email: email })
       });
     
-      msg.innerText = "Thanks for subscribing!";
+      btn.classList.add("success");
+      text.innerHTML = "✓ You're in!";
+    
       form.reset();
     });
     </script>
@@ -609,6 +629,7 @@
 
 </body>
 </html>
+
 
 
 
