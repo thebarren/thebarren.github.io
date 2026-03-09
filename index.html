@@ -244,6 +244,22 @@
       to   { transform: rotate(360deg); }
     }
 
+    .subscribe-btn {
+      background: #111;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .subscribe-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -553,7 +569,7 @@
     </div>
     <div class="nl-form">
       <input type="email" placeholder="your@email.com"/>
-      <button>Subscribe ✦</button>
+      <button class="subscribe-btn">Subscribe ✦</button>
     </div>
   </div>
 </section>
@@ -569,6 +585,7 @@
 
 </body>
 </html>
+
 
 
 
