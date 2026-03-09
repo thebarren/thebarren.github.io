@@ -578,17 +578,23 @@
       <p>New post? You'll be the first to know. No spam, ever.</p>
     </div>
 
-    <form class="nl-form" id="subscribe-form">
+    <form 
+      class="nl-form"
+      action="https://thebarren.substack.com/api/v1/free"
+      method="post"
+    >
     
-      <input 
-        type="email" 
-        name="email" 
+      <input
+        type="email"
+        name="email"
         placeholder="your@email.com"
         required
       >
     
-      <button class="subscribe-btn" id="subscribe-btn" type="submit">
-        <span class="btn-text">Subscribe ✦</span>
+      <input type="hidden" name="source" value="website">
+    
+      <button class="subscribe-btn" type="submit">
+        Subscribe ✦
       </button>
     
     </form>
@@ -636,6 +642,7 @@
 
 </body>
 </html>
+
 
 
 
