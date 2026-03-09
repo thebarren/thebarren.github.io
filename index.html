@@ -603,11 +603,11 @@
     
       const email = form.email.value;
     
-      await fetch("https://substack.com/@thebarren/api/v1/free", {
+      await fetch(" https://thebarren.substack.com/api/v1/free", {
         method: "POST",
         body: new URLSearchParams({ email: email })
       });
-    
+   
       btn.classList.add("success");
       text.innerHTML = "✓ You're in!";
     
@@ -629,6 +629,7 @@
 
 </body>
 </html>
+
 
 
 
