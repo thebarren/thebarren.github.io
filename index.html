@@ -569,25 +569,12 @@
       <p>New post? You'll be the first to know. No spam, ever.</p>
     </div>
 
-    <form 
-      class="nl-form"
-      action="https://https://substack.com/@thebarren/api/v1/free"
-      method="post"
-      target="popupwindow"
-      onsubmit="window.open('https://substack.com/@thebarren', 'popupwindow')"
-    >
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="your@email.com"
-        required
-      >
-
-      <button class="subscribe-btn" type="submit">
-        Subscribe ✦
-      </button>
-
-    </form>
+  <form class="nl-form" id="subscribe-form">
+    <input type="email" name="email" placeholder="your@email.com" required>
+    <button class="subscribe-btn">Subscribe ✦</button>
+  </form>
+  
+  <p id="msg"></p>
 
   </div>
 </section>
@@ -603,6 +590,7 @@
 
 </body>
 </html>
+
 
 
 
