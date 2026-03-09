@@ -569,12 +569,31 @@
       <p>New post? You'll be the first to know. No spam, ever.</p>
     </div>
 
-  <form class="nl-form" id="subscribe-form">
-    <input type="email" name="email" placeholder="your@email.com" required>
-    <button class="subscribe-btn">Subscribe ✦</button>
-  </form>
-  
-  <p id="msg"></p>
+    <form class="nl-form" id="subscribe-form">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button class="subscribe-btn">Subscribe ✦</button>
+    </form>
+    
+    <p id="msg"></p>
+    
+    <script>
+    const form = document.getElementById("subscribe-form");
+    const msg = document.getElementById("msg");
+    
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+    
+      const email = form.email.value;
+    
+      await fetch("https://YOURSUBSTACK.substack.com/api/v1/free", {
+        method: "POST",
+        body: new URLSearchParams({ email: email })
+      });
+    
+      msg.innerText = "Thanks for subscribing!";
+      form.reset();
+    });
+    </script>
 
   </div>
 </section>
@@ -590,6 +609,7 @@
 
 </body>
 </html>
+
 
 
 
