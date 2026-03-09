@@ -563,14 +563,32 @@
 
 <section class="section fade-in d5">
   <div class="newsletter">
+    
     <div>
       <h3>Stay in the loop.</h3>
       <p>New post? You'll be the first to know. No spam, ever.</p>
     </div>
-    <div class="nl-form">
-      <input type="email" placeholder="your@email.com"/>
-      <button class="subscribe-btn">Subscribe ✦</button>
-    </div>
+
+    <form 
+      class="nl-form"
+      action="https://https://substack.com/@thebarren/api/v1/free"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://substack.com/@thebarren', 'popupwindow')"
+    >
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="your@email.com"
+        required
+      >
+
+      <button class="subscribe-btn" type="submit">
+        Subscribe ✦
+      </button>
+
+    </form>
+
   </div>
 </section>
 
@@ -585,6 +603,7 @@
 
 </body>
 </html>
+
 
 
 
