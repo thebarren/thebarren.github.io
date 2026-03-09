@@ -572,7 +572,7 @@
 
 <section class="section fade-in d5">
   <div class="newsletter">
-    
+
     <div>
       <h3>Stay in the loop.</h3>
       <p>New post? You'll be the first to know. No spam, ever.</p>
@@ -580,53 +580,44 @@
 
     <form 
       class="nl-form"
+      id="subscribe-form"
       action="https://thebarren.substack.com/api/v1/free"
       method="post"
+      target="hidden_iframe"
     >
-    
+
       <input
         type="email"
         name="email"
         placeholder="your@email.com"
         required
       >
-    
+
       <input type="hidden" name="source" value="website">
-    
-      <button class="subscribe-btn" type="submit">
-        Subscribe ✦
+
+      <button class="subscribe-btn" id="subscribe-btn" type="submit">
+        <span class="btn-text">Subscribe ✦</span>
       </button>
-    
+
     </form>
+
+    <!-- invisible iframe -->
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
   </div>
 </section>
 
 <script>
-  const form = document.getElementById("subscribe-form");
-  const btn = document.getElementById("subscribe-btn");
-  const text = document.querySelector(".btn-text");
-  
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-  
-    const email = form.email.value;
-  
-    await fetch("https://thebarren.substack.com/api/v1/free", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: new URLSearchParams({
-        email: email,
-        source: "website"
-      })
-    });
- 
-    btn.classList.add("success");
-    text.innerHTML = "✓ You're in!";
-  
-    form.reset();
-  });
+const form = document.getElementById("subscribe-form");
+const btn = document.getElementById("subscribe-btn");
+const text = document.querySelector(".btn-text");
+
+form.addEventListener("submit", function() {
+
+  btn.classList.add("success");
+  text.innerHTML = "✓ You're in!";
+
+});
 </script>
 
 
@@ -642,6 +633,7 @@
 
 </body>
 </html>
+
 
 
 
