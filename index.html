@@ -539,50 +539,6 @@
   </div>
 </section>
 
-<section id="gradient-descent" class="article">
-
-<h1>Geometric Overview of Gradient Descent</h1>
-
-<p>
-Gradient descent can be understood geometrically as repeatedly projecting the
-current point in the direction of the steepest decrease of a function.
-</p>
-
-<h2>Quadratic Case</h2>
-
-<p>
-Consider the loss
-</p>
-
-<p>
-L(w) = (1/2) wᵀAw − bᵀw
-</p>
-
-<p>
-The gradient is
-</p>
-
-<p>
-∇L = Aw − b
-</p>
-
-<p>
-Gradient descent updates the parameters via
-</p>
-
-<p>
-w_{t+1} = w_t − η(Aw_t − b)
-</p>
-
-<h2>Role of SVD</h2>
-
-<p>
-The matrix A can be diagonalized using SVD. This reveals that gradient descent
-acts independently along the singular directions of the matrix.
-</p>
-
-</section>
-
 <section class="section fade-in d5">
   <div class="newsletter">
     <div>
