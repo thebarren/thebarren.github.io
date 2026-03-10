@@ -148,6 +148,14 @@
     }
     .squiggle svg { width: 100%; height: auto; }
 
+    .hidden-tags {
+      display: none;
+    }
+    
+    .tag {
+      cursor: pointer;
+    }
+
     .section {
       max-width: 1100px;
       margin: 0 auto;
@@ -459,49 +467,36 @@
     <h1>Barren life<br/><em>"made?"</em><br/> fertile.</h1>
     <p>A notebook for the intellectually restless — economics, physics, machine learning, and whatever else demands attention this week.</p>
     <div class="tag-row">
+    
       <span class="tag tag-red">Market</span>
       <span class="tag tag-blue">Physics</span>
       <span class="tag tag-green">ML</span>
       <span class="tag tag-yellow">Music</span>
-      <style>
-      .hidden-content {
-        display: none;
-      }
-      
-      .tag {
-        cursor: pointer;
-      }
-      </style>
-      
-      <p>
-        <span class="hidden-content" id="moreText">
-          Garden, Life, and much more
-        </span>
-      </p>
-      
+    
+      <span class="hidden-tags" id="moreTags">
+        <span class="tag tag-green">Garden</span>
+        <span class="tag tag-blue">Life</span>
+      </span>
+    
       <span class="tag tag-ghost" onclick="toggleMore()">+ more</span>
+    
     </div>
   </div>
-
-
-
+  
   <script>
   function toggleMore() {
-    const moreText = document.getElementById("moreText");
+    const moreTags = document.getElementById("moreTags");
     const btn = document.querySelector(".tag-ghost");
   
-    if (moreText.style.display === "inline") {
-      moreText.style.display = "none";
+    if (moreTags.style.display === "inline") {
+      moreTags.style.display = "none";
       btn.textContent = "+ more";
     } else {
-      moreText.style.display = "inline";
+      moreTags.style.display = "inline";
       btn.textContent = "− less";
     }
   }
   </script>
-
-
-
   
   <svg class="hero-doodle" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="80" cy="80" r="70" stroke="#e2dbd3" stroke-width="3" stroke-dasharray="10 6"/>
@@ -644,6 +639,7 @@
 
 </body>
 </html>
+
 
 
 
