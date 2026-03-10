@@ -463,9 +463,47 @@
       <span class="tag tag-blue">Physics</span>
       <span class="tag tag-green">ML</span>
       <span class="tag tag-yellow">Music</span>
-      <span class="tag tag-ghost">+ more</span>
+      <style>
+      .hidden-content {
+        display: none;
+      }
+      
+      .tag {
+        cursor: pointer;
+      }
+      </style>
+      
+      <p>
+        This is the visible text.
+        <span class="hidden-content" id="moreText">
+          Here is the extra content that was hidden before.
+        </span>
+      </p>
+      
+      <span class="tag tag-ghost" onclick="toggleMore()">+ more</span>
     </div>
   </div>
+
+
+
+  <script>
+  function toggleMore() {
+    const moreText = document.getElementById("moreText");
+    const btn = document.querySelector(".tag-ghost");
+  
+    if (moreText.style.display === "inline") {
+      moreText.style.display = "none";
+      btn.textContent = "+ more";
+    } else {
+      moreText.style.display = "inline";
+      btn.textContent = "− less";
+    }
+  }
+  </script>
+
+
+
+  
   <svg class="hero-doodle" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="80" cy="80" r="70" stroke="#e2dbd3" stroke-width="3" stroke-dasharray="10 6"/>
     <text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle"
@@ -607,4 +645,5 @@
 
 </body>
 </html>
+
 
