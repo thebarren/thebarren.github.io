@@ -1,29 +1,26 @@
 function initNewsletter() {
-
   const form = document.getElementById("subscribe-form");
+  if (!form) return console.error("Subscribe form not found");
 
-  if (!form) {
-    setTimeout(initNewsletter, 200); // try again shortly
-    return;
-  }
+  const button = form.querySelector(".subscribe-btn");
 
   form.addEventListener("submit", function(e) {
-
     e.preventDefault();
 
-    const data = new FormData(form);
-
-    fetch("https://script.google.com/macros/s/AKfycbyQzo52hUyl5r-aOcedR9y0TVBqLhHf0esOgvwBITpJhek6YtDptwi7F2Xkp8Uz6bc8/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzGR9XHCtgwxEsNPA2TiGx3u0vGLvGWeokn23T_JqlpHV0JzUggxLRyMInx9P1TFPql/exec", {
       method: "POST",
-      body: data,
+      body: new FormData(form),
       mode: "no-cors"
     });
 
-    document.getElementById("message").innerText = "✓ Thanks for subscribing!";
-    form.reset();
+    // Animate the button
+    button.classList.add("success");
+    button.innerText = "✓ You are in";
 
+    setTimeout(() => {
+      button.classList.remove("success");
+      button.innerText = "Subscribe ✦";
+      form.reset();
+    }, 2000);
   });
-
 }
-
-initNewsletter();
