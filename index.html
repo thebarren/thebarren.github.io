@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Barren</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,400&family=DM+Mono:wght@400;500&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="fade-in d1">
+  <a class="logo" href="index.html">The<span>Barren</span></a>
+  <nav>
+    <a href="Life.html">Life</a>
+    <a href="Ideas.html">Ideas</a>
+    <a href="Posts.html">Posts</a>
+    <a href="Me.html">Me</a>
+  </nav>
+</header>
+
+<section class="hero fade-in d2">
+  <div class="hero-text">
+    <h1>Barren life<br/><em>"made?"</em><br/> fertile.</h1>
+    <p>A notebook for the intellectually restless — economics, physics, machine learning, and whatever else demands attention this week.</p>
+    <div class="tag-row">
+    
+      <span class="tag tag-red">Market</span>
+      <span class="tag tag-blue">Physics</span>
+      <span class="tag tag-green">ML</span>
+      <span class="tag tag-yellow">Music</span>
+    
+      <span class="hidden-tags" id="moreTags">
+        <span class="tag tag-green">Garden</span>
+        <span class="tag tag-blue">Life</span>
+      </span>
+    
+      <span class="tag tag-ghost" onclick="toggleMore()">+ more</span>
+    
+    </div>
+  </div>
+  
+  <script>
+  function toggleMore() {
+    const moreTags = document.getElementById("moreTags");
+    const btn = document.querySelector(".tag-ghost");
+  
+    if (moreTags.style.display === "inline") {
+      moreTags.style.display = "none";
+      btn.textContent = "+ more";
+    } else {
+      moreTags.style.display = "inline";
+      btn.textContent = "− less";
+    }
+  }
+  </script>
+  
+  <svg class="hero-doodle" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="80" cy="80" r="70" stroke="#e2dbd3" stroke-width="3" stroke-dasharray="10 6"/>
+    <text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle"
+      font-family="Fraunces, serif" font-size="22" fill="#e8533a" font-style="italic">∂u</text>
+    <line x1="42" y1="90" x2="118" y2="90" stroke="#1a1614" stroke-width="2.5"/>
+    <text x="50%" y="67%" dominant-baseline="middle" text-anchor="middle"
+      font-family="Fraunces, serif" font-size="22" fill="#1a1614" font-style="italic">∂t</text>
+    <text x="50%" y="84%" dominant-baseline="middle" text-anchor="middle"
+      font-family="DM Mono, monospace" font-size="13" fill="#4a7fb5">= ∇²u</text>
+  </svg>
+</section>
+
+<div class="squiggle fade-in d3">
+  <svg viewBox="0 0 1100 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,12 C60,0 120,24 180,12 C240,0 300,24 360,12 C420,0 480,24 540,12 C600,0 660,24 720,12 C780,0 840,24 900,12 C960,0 1020,24 1100,12"
+      stroke="#e2dbd3" stroke-width="2" fill="none"/>
+  </svg>
+</div>
+
+<section class="section fade-in d3">
+  <div class="section-label">✦ Featured Post</div>
+  <div class="featured">
+    <div>
+      <div class="featured-label">Physics of Biological Matter</div>
+      <h2>All matter is a collection of atoms. If so, why is a stone "lifeless" while we are "alive"?</h2>
+      <p>A tour through the now well-known field of Active matter and how it intermingles with physics and biology.</p>
+      <div class="featured-meta">March 2026 · 8 min read</div>
+    </div>
+    <div class="featured-visual">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="rgba(240,192,64,0.6)" stroke-width="1.5">
+          <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"/>
+          <polygon points="100,30 170,65 170,135 100,170 30,135 30,65"/>
+          <polygon points="100,50 150,75 150,125 100,150 50,125 50,75"/>
+          <polygon points="100,70 130,85 130,115 100,130 70,115 70,85"/>
+        </g>
+        <circle cx="100" cy="100" r="8" fill="#f0c040"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in d4">
+  <div class="section-label">✦ Recent Posts</div>
+  <div class="card-grid">
+
+    <a href="Surge-in-copper-prices.html" class="card-link">
+      <div class="card">
+        <div class="card-accent ca-red"></div>
+        <div class="card-topic">Market</div>
+    
+        <h3>A bifurcation in copper prices</h3>
+    
+        <p>The unusual global dynamics in copper prices unfolded, bifurcating prices in the United States from those of the "not so great" world.</p>
+    
+        <div class="card-footer">
+          <span>Mar 2026 · 10 min</span>
+          <span class="read-more">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    
+    <a href="gradient-descent.html" class="card-link">
+      <div class="card">
+        <div class="card-accent ca-green"></div>
+        <div class="card-topic">Machine Learning</div>
+    
+        <h3>Geometric overview of gradient descent and its optimal</h3>
+    
+        <p>A look at SVD and how to calculate and understand Gradient descent.</p>
+    
+        <div class="card-footer">
+          <span>Mar 2026 · 10 min</span>
+          <span class="read-more">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="A-phd-worth.html" class="card-link">
+      <div class="card">
+        <div class="card-accent ca-blue"></div>
+        <div class="card-topic">Life</div>
+    
+        <h3>A PhD's worth in an increasingly uncertain world.</h3>
+    
+        <p>A look at SVD and how to calculate and understand Gradient descent.</p>
+    
+        <div class="card-footer">
+          <span>Mar 2026 · 10 min</span>
+          <span class="read-more">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="The-smell-of-a-water.html" class="card-link">
+      <div class="card">
+        <div class="card-accent ca-blue"></div>
+        <div class="card-topic">Life</div>
+    
+        <h3>The smell of a water-guzzling garden.</h3>
+    
+        <p>A love letter to the smell of "rain", every time I water my garden. </p>
+    
+        <div class="card-footer">
+          <span>Mar 2026 · 10 min</span>
+          <span class="read-more">Read →</span>
+        </div>
+      </div>
+    </a>
+    
+  </div>
+</section>
+
+<div id="newsletter"></div>
+<div id="footer"></div>
+
+<script src="newsletterscript.js"></script>
+<script src="layout.js"></script>
+
+</body>
+</html>
+
+
+
+
