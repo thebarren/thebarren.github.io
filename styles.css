@@ -95,6 +95,14 @@ nav a:hover { color: var(--accent1); }
     line-height: 1.7;
 }
 
+.hero-text p1 {
+    margin-top: 1.2rem;
+    font-size: 3rem;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.7;
+}
+
 .hero-doodle {
     width: 160px;
     flex-shrink: 0;
