@@ -345,6 +345,13 @@ nav a:hover { color: var(--accent1); }
     color: var(--muted);
     line-height: 1.65;
 }
+
+.card p1 {
+    font-size: 2rem;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
 .card-footer {
     margin-top: 1.2rem;
     display: flex;
